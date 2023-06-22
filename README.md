@@ -1,10 +1,3 @@
----
-colorlinks: true
-linkcolor: blue
-urlcolor: blue
-geometry: margin=1in
----
-
 # FluCoMa: Making Music using Machine Listening & Machine Learning   
 **July 10-14, 2023 (?)**  
 **9am-12pm & 12:30pm-2:30pm (with breaks) Pacific Time**  
