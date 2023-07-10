@@ -1,5 +1,5 @@
 # FluCoMa: Making Music using Machine Listening & Machine Learning   
-**July 10-14, 2023 (?)**  
+**July 10-14, 2023**  
 **9am-12pm & 12:30pm-2:30pm (with breaks) Pacific Time**  
 **classes held on Zoom**  
 
