@@ -1,6 +1,6 @@
 # FluCoMa: Making Music using Machine Listening & Machine Learning   
 **July 10-14, 2023**  
-**9am-12pm & 12:30pm-2:30pm (with breaks) Pacific Time**  
+**9am-12pm & 1pm-3pm (with breaks) Pacific Time**  
 **classes held on Zoom**  
 
 ## Description
@@ -21,15 +21,14 @@ Musicians and researchers interested in incorporating machine listening and mach
 
 Comfort using Max or SuperCollider for creative music projects. This course will not include introducing users to the basics of Max or SuperCollider.
 
-## Schedule
+## Schedule 
 
 ### Day 1: Neural Networks & Supervised Learning
 
-* Working with data in FluCoMa
-* Timbral Classification with MFCCs
-* Regression for manipulating high-dimensional control spaces
-* Neural Network prediction using real-time audio descriptors
-* Wavetable Autoencoder
+* [x] Working with data in FluCoMa
+* [x] Timbral Classification with MFCCs
+* [x] Regression for manipulating high-dimensional control spaces
+* [x] Neural Network prediction using real-time audio descriptors
 
 ### Day 2: Temporal & Spectral Decomposition
 
@@ -60,6 +59,7 @@ Comfort using Max or SuperCollider for creative music projects. This course will
     - Multidimensional Scaling (MDS)
     - Uniform Manifold Approximation and Projection (UMAP)
 * Clustering with KMeans & SKMeans
+* Wavetable Autoencoder
 
 ### Day 5: Misc., Presentations, & Next Steps
 

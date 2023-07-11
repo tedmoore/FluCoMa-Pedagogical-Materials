@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 5,
-			"revision" : 3,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 87.0, 1196.0, 959.0 ],
+		"rect" : [ 34.0, 87.0, 1920.0, 1319.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -139,12 +139,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-54",
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 560.999999105930328, 496.800007402896881, 110.000000894069672, 22.0 ],
-					"text" : "predictpoint oboe"
+					"patching_rect" : [ 560.999999105930328, 496.800007402896881, 110.000000894069672, 35.0 ],
+					"text" : "predictpoint trombone"
 				}
 
 			}
@@ -336,7 +337,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 235.200003504753113, 193.750000178813934, 165.0, 22.0 ],
+					"patching_rect" : [ 305.200003504753113, 193.750000178813934, 165.0, 22.0 ],
 					"text" : "buffer~ mfccsbuf @samps 13"
 				}
 
@@ -397,7 +398,7 @@
 								"filename" : "Harker-DS-TenOboeMultiphonics-M.wav",
 								"filekind" : "audiofile",
 								"id" : "u804002094",
-								"selection" : [ 0.618759455370651, 1.0 ],
+								"selection" : [ 0.385779122541604, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
 									"loop" : 0
@@ -409,7 +410,7 @@
 								"filename" : "Olencki-TenTromboneLongTones-M.wav",
 								"filekind" : "audiofile",
 								"id" : "u950002097",
-								"selection" : [ 0.597579425113464, 1.0 ],
+								"selection" : [ 0.475037821482602, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
 
