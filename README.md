@@ -1,7 +1,7 @@
 # FluCoMa: Making Music using Machine Listening & Machine Learning   
 **July 10-14, 2023**  
 **9am-12pm & 1pm-3pm (with breaks) Pacific Time**  
-**classes held on Zoom**  
+**Classes Held on Zoom**  
 
 ## Description
 
@@ -25,21 +25,16 @@ Comfort using Max or SuperCollider for creative music projects. This course will
 
 ### Day 1: Neural Networks & Supervised Learning
 
-* [x] Working with data in FluCoMa
-* [x] Timbral Classification with MFCCs
-* [x] Regression for manipulating high-dimensional control spaces
-* [x] Neural Network prediction using real-time audio descriptors
+* Working with data in FluCoMa
+* Timbral Classification with MFCCs
+* Regression for manipulating high-dimensional control spaces
+* Neural Network prediction using real-time audio descriptors
 
 ### Day 2: Temporal & Spectral Decomposition
 
-* Slicing audio in time using:
-    - amplitude
-    - spectral onsets
-    - transients
-    - measures of "novelty"
+* Slicing Audio in Time
 * Sinusoidal Modelling
 * Harmonic-Percussive Source Separation
-* Transients
 * Spectral Decomposition with NMF (Non-negative Matrix Factorization)
 
 ### Day 3: Audio Analysis & Plotting
@@ -47,25 +42,26 @@ Comfort using Max or SuperCollider for creative music projects. This course will
 * Audio descriptor analysis
 * Statistical Analysis
 * Plotting Data in FluCoMa
+
+### Day 4: Dimensionality Reduction & Unsupervised Learning
+
 * KDTree
 * Concatenative Synthesis
 * Distance as a Measure of Similarity
 * Scalers: Normalization, Standardization, & Robust Scaler
-
-### Day 4: Dimensionality Reduction & Unsupervised Learning
-
 * Dimensionality Reduction with 
     - Principal Component Analysis (PCA)
-    - Multidimensional Scaling (MDS)
     - Uniform Manifold Approximation and Projection (UMAP)
-* Clustering with KMeans & SKMeans
-* Wavetable Autoencoder
 
 ### Day 5: Misc., Presentations, & Next Steps
 
-* Catch up on topics
+* Clustering with KMeans
+* Wavetable Autoencoder
+* KNN vs. MLP
+* Concatenative Synthesis with Real-Time Audio
+* Seeding NMF
+* Automatic Buffer & Dataset Management
 * Presentations by participants sharing projects or progress from the week
-* Next Steps and Future Directions
 
 ## About the instructors:
 
