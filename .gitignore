@@ -1,4 +1,6 @@
+*.wav
 *.wav.reapeaks
 promo
-audio-files
 .DS_Store
+python/env-flucoma-pedagogical-materials
+media
