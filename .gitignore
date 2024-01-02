@@ -2,5 +2,5 @@
 *.wav.reapeaks
 promo
 .DS_Store
-python/env-flucoma-pedagogical-materials
+python/env-nmf
 media
