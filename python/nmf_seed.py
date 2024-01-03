@@ -12,10 +12,9 @@ if __name__ == '__main__':
     # currently the seed data is coming from the same file for the bases and activations
     # would it even make sense to use different files for bases and activations?
     parser.add_argument('--seed-data',type=str,required=True,help='path to json file containing NMF decomposition with bases to seed NMF process')
-    
     parser.add_argument('--audio-path-to-analyze',type=str,required=True,help='path to audio file to decompose')
     parser.add_argument('--bases-mode',type=str,required=True,choices=['random','seed'],help='mode for bases: random or seed')
-    # parser.add_argument('--activations-mode',type=str,required=True,choices=['random','seed'],help='mode for activations: random or seed')
+    parser.add_argument('--activations-mode',type=str,required=True,choices=['random','seed'],help='mode for activations: random or seed')
     args = parser.parse_args()
 
     with open(args.seed_data,'r') as f:
