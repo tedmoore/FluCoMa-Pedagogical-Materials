@@ -1,5 +1,4 @@
 import soundfile as sf
-from sklearn.decomposition import NMF
 import numpy as np
 import argparse
 import json
@@ -25,8 +24,7 @@ def resynthFromFiles(bases_data,activations_data,basis_index,activation_index,ou
     print(basis.shape)
     print(activation.shape)
                    
-    resynthComponent(stft,basis,activation,args.output_path,fftSettings,sr=activations_data['sr'])
-    
+    resynthComponent(stft,activation,basis,args.output_path,fftSettings,sr=activations_data['sr'])
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='NMF resynthesis')

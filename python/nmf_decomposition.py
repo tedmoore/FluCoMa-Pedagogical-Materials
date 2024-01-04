@@ -7,9 +7,8 @@ from sklearn.decomposition import NMF
 import argparse
 from pathlib import Path
 import json
-import pickle
 
-def resynthComponent(stft,basis,activation,outpath,fftSettings,sr):
+def resynthComponent(stft,activation,basis,outpath,fftSettings,sr):
     Y = np.outer(basis, activation) * np.exp(1j * np.angle(stft))
     y = librosa.istft(Y,**fftSettings)
     sf.write(outpath,y,sr,subtype='PCM_24')
@@ -23,43 +22,39 @@ def main(audio_path, n_components,fftSize,hopSize,resynth,plot,duration_seconds)
     print(f'path: {audio_path}\nsamplerate: {sr}')
 
     stft = librosa.stft(audio_buffer,**fftSettings)
-    matrix = np.abs(stft)
+    matrix = np.transpose(np.abs(stft))
 
     print(f'stft shape: {stft.shape[0]} mags, {stft.shape[1]} frames')
 
     # NMF
     nmf_args = {'solver':'mu','beta_loss':'kullback-leibler'}
     nmf_model = NMF(n_components=n_components,**nmf_args,)
-    bases = nmf_model.fit_transform(matrix) 
-    activations = nmf_model.components_
-    bases = np.transpose(bases)
+    acts = nmf_model.fit_transform(matrix) 
+    bases = nmf_model.components_
+    acts = np.transpose(acts)
 
     audio_file_stem = Path(audio_path).stem
-    model_path = f'{audio_file_stem}_nmf-model.pkl'
-    with open(model_path, 'wb') as file:
-        pickle.dump(nmf_model, file)
-
+    
     json_path = f'{audio_file_stem}-decomposition.json'
     
     d = {}
-    d['model_path'] = model_path
     d['n_components'] = n_components
     d['fftSize'] = fftSize
     d['hopSize'] = hopSize
     d['sr'] = sr
     d['audio_path'] = audio_path
-    d['bases'] = bases.tolist()
-    d['activations'] = activations.tolist()    
+    d['acts'] = acts.tolist()
+    d['bases'] = bases.tolist()    
 
     with open(json_path,'w') as f:
         f.write(json.dumps(d,indent=4))
 
+    print(f'acts shape: {acts.shape}')
     print(f'bases shape: {bases.shape}')
-    print(f'activations shape: {activations.shape}')
 
     if resynth:
         for i in range(n_components):
-            resynthComponent(stft,bases[i],activations[i],f'component-{i}.wav',fftSettings,sr)
+            resynthComponent(stft,acts[i],bases[i],f'component-{i}.wav',fftSettings,sr)
 
     if plot:
         plt.figure(figsize=(12, 8))
@@ -69,14 +64,14 @@ def main(audio_path, n_components,fftSize,hopSize,resynth,plot,duration_seconds)
         plt.title('Spectrogram')
 
         plt.subplot(3, 1, 2)
+        for act in acts:
+            plt.plot(act)
+        plt.title('NMF Activations')
+
+        plt.subplot(3, 1, 3)
         for basis in bases:
             plt.plot(basis)
         plt.title('NMF Bases')
-
-        plt.subplot(3, 1, 3)
-        for activation in activations:
-            plt.plot(activation)
-        plt.title('NMF Activations')
 
         plt.tight_layout()
         plt.show()

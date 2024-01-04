@@ -24,7 +24,7 @@ if __name__ == '__main__':
     
     audio_buffer, sr = librosa.load(args.audio_path_to_analyze,sr=None,mono=True)
     stft = librosa.stft(audio_buffer,**fftSettings)
-    matrix = np.abs(stft,dtype=np.float64)
+    matrix = np.transpose(np.abs(stft,dtype=np.float64))
 
     if args.bases_mode == 'random':
         bases = np.random.rand(matrix.shape[0],seed_data['n_components'])
@@ -38,17 +38,9 @@ if __name__ == '__main__':
 
     model = NMF(n_components=seed_data['n_components'],init='custom',solver='mu',beta_loss='kullback-leibler')
 
-    print('bases shape',bases.shape)
-    print('activations shape',activations.shape)
-    print('stft shape',matrix.shape)
-
-    print('bases dtype',bases.dtype)
-    print('activations dtype',activations.dtype)
-    print('stft dtype',matrix.dtype)
-
-    new_bases = model.fit_transform(matrix, W=bases, H=activations)
-    new_activations = model.components_
-    new_bases = np.transpose(new_bases)
+    new_acts = model.fit_transform(matrix, W=bases, H=activations)
+    new_bases = model.components_
+    new_acts = np.transpose(new_acts)
 
     plt.figure(figsize=(12, 8))
 
@@ -57,14 +49,14 @@ if __name__ == '__main__':
     plt.title('Spectrogram')
 
     plt.subplot(3, 1, 2)
+    for new_acts in new_acts:
+        plt.plot(new_basis)
+    plt.title('NMF Acts')
+
+    plt.subplot(3, 1, 3)
     for new_basis in new_bases:
         plt.plot(new_basis)
     plt.title('NMF Bases')
-
-    plt.subplot(3, 1, 3)
-    for new_activation in new_activations:
-        plt.plot(new_activation)
-    plt.title('NMF Activations')
 
     plt.tight_layout()
     plt.show()
