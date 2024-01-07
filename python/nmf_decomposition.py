@@ -7,11 +7,32 @@ from sklearn.decomposition import NMF
 import argparse
 from pathlib import Path
 import json
+import time
 
 def resynthComponent(stft,activation,basis,outpath,fftSettings,sr):
     Y = np.outer(basis, activation) * np.exp(1j * np.angle(stft))
     y = librosa.istft(Y,**fftSettings)
     sf.write(outpath,y,sr,subtype='PCM_24')
+
+def plot_nmf(stft, acts, bases, sr):
+    plt.figure(figsize=(12, 8))
+
+    plt.subplot(3, 1, 1)
+    librosa.display.specshow(librosa.amplitude_to_db(np.abs(stft)), sr=sr, x_axis='time', y_axis='log')
+    plt.title('Spectrogram')
+
+    plt.subplot(3, 1, 2)
+    for act in acts:
+        plt.plot(act)
+    plt.title('NMF Activations')
+
+    plt.subplot(3, 1, 3)
+    for basis in bases:
+        plt.plot(basis)
+    plt.title('NMF Bases')
+
+    plt.tight_layout()
+    plt.show()
 
 def main(audio_path, n_components,fftSize,hopSize,resynth,plot,duration_seconds):
 
@@ -29,7 +50,11 @@ def main(audio_path, n_components,fftSize,hopSize,resynth,plot,duration_seconds)
     # NMF
     nmf_args = {'solver':'mu','beta_loss':'kullback-leibler'}
     nmf_model = NMF(n_components=n_components,**nmf_args,)
+
+    start_time = time.time()
     acts = nmf_model.fit_transform(matrix) 
+    end_time = time.time()
+    print(f'elapsed time: {end_time-start_time}')
     bases = nmf_model.components_
     acts = np.transpose(acts)
 
@@ -57,24 +82,7 @@ def main(audio_path, n_components,fftSize,hopSize,resynth,plot,duration_seconds)
             resynthComponent(stft,acts[i],bases[i],f'component-{i}.wav',fftSettings,sr)
 
     if plot:
-        plt.figure(figsize=(12, 8))
-
-        plt.subplot(3, 1, 1)
-        librosa.display.specshow(librosa.amplitude_to_db(np.abs(stft)), sr=sr, x_axis='time', y_axis='log')
-        plt.title('Spectrogram')
-
-        plt.subplot(3, 1, 2)
-        for act in acts:
-            plt.plot(act)
-        plt.title('NMF Activations')
-
-        plt.subplot(3, 1, 3)
-        for basis in bases:
-            plt.plot(basis)
-        plt.title('NMF Bases')
-
-        plt.tight_layout()
-        plt.show()
+        plot_nmf(stft, acts, bases, sr)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
