@@ -17,7 +17,7 @@ def resynthFromFiles(bases_data,activations_data,basis_index,activation_index,ou
     audio_buffer, _ = librosa.load(activations_data['audio_path'],sr=None,mono=True)
     stft = librosa.stft(audio_buffer,**fftSettings)
 
-    activation = np.array(activations_data['activations'][args.activation_index])
+    activation = np.array(activations_data['acts'][args.activation_index])
     basis = np.array(bases_data['bases'][args.basis_index])
     
     print(stft.shape)
