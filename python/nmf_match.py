@@ -50,7 +50,7 @@ if __name__ == '__main__':
     with open(args.bases_data,'r') as f:
         bases_data = json.loads(f.read())
     
-    fftSettings = {'n_fft':bases_data['fftSize'],'hop_length':bases_data['hopSize']}
+    fftSettings = {'n_fft':bases_data['n_fft'],'hop_length':bases_data['hop_length']}
 
     audio_buffer, sr = librosa.load(args.audio_path,sr=None,mono=True)
 
