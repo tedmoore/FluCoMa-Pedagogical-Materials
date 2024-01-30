@@ -11,21 +11,9 @@ import json
 def make_mags_from_basis_and_activation(activation,basis):
     return np.outer(basis, activation)
 
-def broadcast_mask(mask,mags_to_mask):
-    if mask.flatten().size < mags_to_mask.flatten().size:
-        smaller, larger = mask, mags_to_mask
-    else:
-        smaller, larger = mags_to_mask, mask
-
-    smaller = np.resize(smaller,larger.shape)
-
-    return smaller * larger
-
 def balance_mags_via_softmask(resynthesized_mags,mags_to_mask):
     multiplier = 1 / np.maximum(np.sum(resynthesized_mags,axis=0),1e-10) # epsilon to avoid divide by zero
-    masks = [resynthesized_mags[i] * multiplier for i in range(len(resynthesized_mags))]
-    masked_mags = [broadcast_mask(masks[i],mags_to_mask) for i in range(len(resynthesized_mags))]
-    return masked_mags
+    return multiplier * resynthesized_mags * mags_to_mask
 
 def make_complex_matrix_from_mags_and_phases(mags,phases):
     return mags * np.exp(1j * phases)
