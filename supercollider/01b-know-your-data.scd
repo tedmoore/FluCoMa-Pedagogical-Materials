@@ -94,6 +94,8 @@ s.waitForBoot{
 
 	trainingData.print;
 	trainingLabels.print;
+
+	// PlotXYColor: https://github.com/tedmoore/PlotXYColor
 	PlotXYColor.fromFluidDataSet(trainingData,trainingLabels,headerArray:headers.asArray)
 }
 )

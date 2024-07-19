@@ -27,3 +27,30 @@ fork({
 	FluidWaveform(buf,slicepoints);
 },AppClock);
 )
+
+// FluidAmpFeature as an audio FX
+
+~drums = Buffer.read(s,FluidFilesPath("Nicol-LoopE-M.wav"));
+
+// listen to the original
+~drums.play;
+
+// add extra pop to the drums by using the AmpFeature envelope
+(
+{
+    var sig = PlayBuf.ar(~drums.numChannels,~drums,BufRateScale.ir(~drums),loop:1);
+    var amp_feature = FluidAmpFeature.ar(sig,100,100,44100,44100,-40);
+    amp_feature.poll;
+    sig * amp_feature.dbamp * -30.dbamp;
+}.play;
+)
+
+// really suppress the amplitude peaks by inverting the feature
+(
+{
+    var sig = PlayBuf.ar(~drums.numChannels,~drums,BufRateScale.ir(~drums),loop:1);
+    var amp_feature = FluidAmpFeature.ar(sig,100,100,44100,44100,-40) * -1;
+    amp_feature.poll;
+    sig * amp_feature.dbamp
+}.play;
+)
