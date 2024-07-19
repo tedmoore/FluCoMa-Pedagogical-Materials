@@ -1,7 +1,8 @@
 // initialize some buffers
 (
 Window.closeAll;
-~buf = Buffer.read(s,FluidFilesPath("Olencki-TenTromboneLongTones-M.wav"));
+// ~buf = Buffer.read(s,FluidFilesPath("Olencki-TenTromboneLongTones-M.wav"));
+~buf = Buffer.read(s,"/Users/ted/Desktop/1-min-nim-constellation.wav");
 // ~buf = Buffer.read(s,FluidFilesPath("Harker-DS-TenOboeMultiphonics-M.wav"));
 ~indices = Buffer(s);
 ~concat_buf = Buffer(s);
@@ -64,7 +65,7 @@ fork{
 // use PCA to reduce the number of dimensions from 2048 to something smaller
 (
 ~ds_pca = FluidDataSet(s);
-~pca = FluidPCA(s,150);
+~pca = FluidPCA(s,600);
 ~pca.fitTransform(~ds,~ds_pca,{
 	arg variance;
 	variance.postln;
@@ -76,7 +77,7 @@ fork{
 
 // train the autoencoder
 (
-~nn_shape = [100,50,2,50,100];
+~nn_shape = [300,200,100,50,2].mirror;
 ~ae = FluidMLPRegressor(s,~nn_shape,FluidMLPRegressor.relu,FluidMLPRegressor.identity,learnRate:0.1,maxIter:10,validation:0);
 ~ae.tapOut_(-1);
 ~continuous = true;
@@ -92,7 +93,8 @@ fork{
 
 // tweak the learning rate
 ~ae.learnRate_(0.01);
-~ae.learnRate_(0.01);
+~ae.batchSize_(200);
+~ae.learnRate_(0.0001);
 
 // turn off continuous training
 ~continuous = false;
