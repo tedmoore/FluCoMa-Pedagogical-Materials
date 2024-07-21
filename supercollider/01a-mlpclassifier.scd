@@ -35,7 +35,6 @@ s.waitForBoot{
 {
 	var sig = PlayBuf.ar(1,~trombone,BufRateScale.ir(~trombone),doneAction:2);
 	var mfccs = FluidMFCC.kr(sig,~nMFCCs,40,1,maxNumCoeffs:~nMFCCs);
-	mfccs.poll
 	SendReply.kr(Impulse.kr(30),"/mfccs",mfccs);
 	FluidKrToBuf.kr(mfccs,~timbre_buf);
 	sig.dup;

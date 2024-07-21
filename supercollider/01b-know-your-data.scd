@@ -1,5 +1,16 @@
+/*
+
+this code assumes that the use case for comparing these two sounds will be done in real time.
+therefore it makes *each* fft frame's mfcc analysis it's own data point, to get a sense of
+what the data might look like in a real time audio stream. before doing this, it strips out
+any silence that might be in the sound file so that it doesn't categorize silence as "bass"
+or "music box".
+
+*/
+
 // two audio buffers to use as separate classes
 (
+~dir = thisProcess.nowExecutingPath.dirname;
 s.waitForBoot{
 	var mfccbuf = Buffer(s);
 	var specbuf = Buffer(s);
@@ -94,6 +105,8 @@ s.waitForBoot{
 
 	trainingData.print;
 	trainingLabels.print;
+	trainingData.write("%/01b-training-data.json".format(~dir));
+	trainingLabels.write("%/01b-training-labels.json".format(~dir));
 
 	// PlotXYColor: https://github.com/tedmoore/PlotXYColor
 	PlotXYColor.fromFluidDataSet(trainingData,trainingLabels,headerArray:headers.asArray)

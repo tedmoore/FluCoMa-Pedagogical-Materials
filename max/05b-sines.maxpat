@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 5,
+			"minor" : 6,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -204,8 +204,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 784.600008487701416, 254.866666674613953, 316.0, 22.0 ],
-					"text" : "fluid.sinefeature~ @maxnumpeaks 20 @maxfftsize 16384"
+					"patching_rect" : [ 784.600008487701416, 254.866666674613953, 323.0, 22.0 ],
+					"text" : "fluid.sinefeature~ @maxnumpeaks 100 @maxfftsize 16384"
 				}
 
 			}
@@ -230,8 +230,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 5,
+							"minor" : 6,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -439,6 +439,7 @@
 											"parameter_enum" : [ "val1", "val2" ],
 											"parameter_longname" : "live.text[4]",
 											"parameter_mmax" : 1,
+											"parameter_modmode" : 0,
 											"parameter_shortname" : "live.text",
 											"parameter_type" : 2
 										}
@@ -467,6 +468,7 @@
 											"parameter_enum" : [ "val1", "val2" ],
 											"parameter_longname" : "live.text[5]",
 											"parameter_mmax" : 1,
+											"parameter_modmode" : 0,
 											"parameter_shortname" : "live.text",
 											"parameter_type" : 2
 										}
@@ -1198,14 +1200,14 @@
 		"dependency_cache" : [ 			{
 				"name" : "fluid.demosound.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/patchers",
-				"patcherrelativepath" : "../../../Max 8/Packages/FluidCorpusManipulation/patchers",
+				"patcherrelativepath" : "../../../../../Max 8/Packages/FluidCorpusManipulation/patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "fluid.patchpath.js",
 				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/javascript",
-				"patcherrelativepath" : "../../../Max 8/Packages/FluidCorpusManipulation/javascript",
+				"patcherrelativepath" : "../../../../../Max 8/Packages/FluidCorpusManipulation/javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}

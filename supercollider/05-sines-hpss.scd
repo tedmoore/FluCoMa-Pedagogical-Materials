@@ -37,7 +37,7 @@ y = {
 	harm = PitchShift.ar(harm,pitchRatio:LFDNoise0.kr(1).midiratio);
 	harm = Pan2.ar(harm,SinOsc.kr(0.3));
 	harm = FreeVerb2.ar(harm[0],harm[1],0.9,0.9,0.1);
-	harm + Pan2.ar((PitchShift.ar(perc,pitchRatio:0.2) * 10).softclip * 0.3,LFDNoise0.kr(1));
+	harm + residual + Pan2.ar((PitchShift.ar(perc,pitchRatio:0.2) * 10).softclip * 0.3,LFDNoise0.kr(1));
 }.play;
 )
 
@@ -78,10 +78,11 @@ y = {
 var buf = Buffer.read(s,FluidFilesPath("Harker-DS-TenOboeMultiphonics-M.wav"));
 
 x = {
-    arg nbPeaks = 10, t_hold = 1;
+    arg nbPeaks = 100, t_hold = 1;
     var source = PlayBuf.ar(1, buf, loop: 1);
-    var analysis = Latch.kr(FluidSineFeature.kr(source,numPeaks: nbPeaks, maxNumPeaks: 50),t_hold);
-    var resynth = SinOsc.ar(analysis[Array.iota(50)], mul: analysis[Array.iota(50) + 50]).sum;
+	var freqs, amps, resynth;
+	# freqs, amps = Latch.kr(FluidSineFeature.kr(source,numPeaks: nbPeaks, maxNumPeaks: 50),t_hold);
+    resynth = SinOsc.ar(freqs, mul: amps).sum;
     [source, resynth];
 }.play
 )

@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 5,
+			"minor" : 6,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -39,6 +39,41 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 548.800008177757263, 358.400005280971527, 100.000004351139069, 20.0 ],
+					"text" : "make predictions"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 652.0, 356.400005280971527, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 652.0, 387.272489845752716, 58.389264285564423, 22.0 ],
+					"text" : "gate"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-65",
 					"maxclass" : "message",
@@ -82,7 +117,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 652.0, 297.100004255771637, 24.0, 24.0 ]
+					"patching_rect" : [ 691.389264285564423, 297.298656404018402, 24.0, 24.0 ]
 				}
 
 			}
@@ -93,7 +128,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 652.0, 327.500004708766937, 63.0, 22.0 ],
+					"patching_rect" : [ 691.389264285564423, 327.5, 63.0, 22.0 ],
 					"text" : "qmetro 50"
 				}
 
@@ -105,7 +140,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 652.0, 357.700000107288361, 122.0, 22.0 ],
+					"patching_rect" : [ 652.349021673202515, 422.561075091362, 122.0, 22.0 ],
 					"text" : "predictpoint mfccsbuf"
 				}
 
@@ -118,7 +153,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 717.0, 533.600007951259613, 183.0, 82.0 ],
+					"patching_rect" : [ 717.449695646762848, 598.400008916854858, 183.0, 82.0 ],
 					"setminmax" : [ 0.0, 0.150000005960464 ],
 					"setstyle" : 5
 				}
@@ -131,7 +166,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 715.200010657310486, 496.800007402896881, 49.0, 22.0 ],
+					"patching_rect" : [ 716.107413709163666, 561.48725563287735, 49.0, 22.0 ],
 					"text" : "route fit"
 				}
 
@@ -139,13 +174,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-54",
-					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 560.999999105930328, 496.800007402896881, 110.000000894069672, 35.0 ],
-					"text" : "predictpoint trombone"
+					"patching_rect" : [ 561.744990885257721, 561.48725563287735, 110.000000894069672, 22.0 ],
+					"text" : "predictpoint oboe"
 				}
 
 			}
@@ -156,7 +190,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 679.200010120868683, 384.800005733966827, 134.0, 22.0 ],
+					"patching_rect" : [ 679.865801393985748, 449.406713843345642, 134.0, 22.0 ],
 					"text" : "fit analyses instruments"
 				}
 
@@ -398,7 +432,6 @@
 								"filename" : "Harker-DS-TenOboeMultiphonics-M.wav",
 								"filekind" : "audiofile",
 								"id" : "u804002094",
-								"selection" : [ 0.385779122541604, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
 									"loop" : 0
@@ -410,7 +443,6 @@
 								"filename" : "Olencki-TenTromboneLongTones-M.wav",
 								"filekind" : "audiofile",
 								"id" : "u950002097",
-								"selection" : [ 0.475037821482602, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
 
@@ -447,7 +479,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 652.0, 415.100001215934753, 119.0, 62.0 ],
+					"patching_rect" : [ 652.349021673202515, 479.60805743932724, 119.0, 62.0 ],
 					"text" : "fluid.mlpclassifier~ @activation 1 @learnrate 0.05 @maxiter 1000"
 				}
 
@@ -467,6 +499,13 @@
 			}
  ],
 		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
+					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-22", 0 ],
 					"source" : [ "obj-27", 0 ]
@@ -643,7 +682,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-58", 0 ],
+					"destination" : [ "obj-2", 1 ],
 					"source" : [ "obj-59", 0 ]
 				}
 
@@ -689,6 +728,13 @@
 					"destination" : [ "obj-50", 0 ],
 					"order" : 0,
 					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-8", 0 ]
 				}
 
 			}

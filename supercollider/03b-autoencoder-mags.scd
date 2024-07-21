@@ -3,10 +3,10 @@ s.options.numWireBufs_(2048);
 
 // initialize some buffers
 (
-// ~path = FluidFilesPath("Olencki-TenTromboneLongTones-M.wav");
+~path = FluidFilesPath("Olencki-TenTromboneLongTones-M.wav");
 // ~path = FluidFilesPath("Tremblay-AaS-VoiceQC-B2K-M.wav");
 // ~path = "/Users/ted/Desktop/1-min-nim-constellation.wav";
-~path = "/Users/ted/Desktop/rotated_summed_in_time_domain.wav";
+// ~path = "/Users/ted/Desktop/rotated_summed_in_time_domain.wav";
 Window.closeAll;
 ~buf = Buffer.read(s,~path);
 ~indices = Buffer(s);
@@ -58,13 +58,10 @@ fork{
 }
 )
 
-// take a look at it
-~ds.print;
-
 // use PCA to reduce the number of dimensions from 2048 to something smaller
 (
 ~ds_pca = FluidDataSet(s);
-~pca = FluidPCA(s,100);
+~pca = FluidPCA(s,20);
 ~pca.fitTransform(~ds,~ds_pca,{
 	arg variance;
 	variance.postln;
@@ -85,7 +82,7 @@ fork{
 // train the autoencoder
 (
 // ~nn_shape = [200,100,50,2].mirror;
-~nn_shape = [50,2].mirror;
+~nn_shape = [15,10,5,2].mirror;
 ~ae = FluidMLPRegressor(s,~nn_shape,FluidMLPRegressor.relu,FluidMLPRegressor.sigmoid,learnRate:0.1,maxIter:1,validation:0);
 // ~ae.tapOut_(-1);
 ~continuous = true;
@@ -101,14 +98,11 @@ fork{
 
 // tweak the learning rate
 ~ae.learnRate_(0.001);
-~ae.batchSize_(40);
-~ae.maxIter_(500);
+~ae.batchSize_(5);
+~ae.maxIter_(50);
 
 // turn off continuous training
 ~continuous = false;
-
-~ae.write("/Users/ted/Documents/_TEACHING/_materials/flucoma/FluCoMa-Pedagogical-Materials-repo/supercollider/03a-trombone.json");
-~ae.read("/Users/ted/Documents/_TEACHING/_materials/flucoma/FluCoMa-Pedagogical-Materials-repo/supercollider/03a-trombone.json");
 
 // plot it!
 (
@@ -144,6 +138,9 @@ fork{
 		ms.do(_.reference_(0.5));
 		ms.do(_.drawRects = false);
 		ms.do(_.drawLines = true);
+
+		StaticText(win,Rect(0,700,512,20)).string_("Original at Nearest Neighbor");
+		StaticText(win,Rect(512,700,512,20)).string_("Predicted Magnitudes");
 
 		~fftbuf = Buffer.alloc(s,~fftSize);
 
