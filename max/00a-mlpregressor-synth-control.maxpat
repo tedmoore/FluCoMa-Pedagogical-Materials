@@ -40,6 +40,18 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-25",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 570.0, 303.0, 99.0, 22.0 ],
+					"text" : "read 00a-nn.json"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-13",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -93,7 +105,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 337.0, 504.0, 88.0, 22.0 ],
-					"text" : "0.00009"
+					"text" : "0.002584"
 				}
 
 			}
@@ -116,7 +128,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "list" ],
-					"patching_rect" : [ 707.0000039935112, 47.766666203737259, 195.0, 22.0 ],
+					"patching_rect" : [ 707.0000039935112, 50.433332681655884, 195.0, 22.0 ],
 					"text" : "fluid.buf2list @source predictionbuf"
 				}
 
@@ -152,7 +164,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 448.5, 336.399999558925629, 186.0, 22.0 ],
+					"patching_rect" : [ 753.5, 18.0, 186.0, 22.0 ],
 					"text" : "buffer~ predictionbuf @samps 10"
 				}
 
@@ -176,7 +188,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 434.5, 303.0, 129.0, 22.0 ],
+					"patching_rect" : [ 427.233338499069191, 303.0, 129.0, 22.0 ],
 					"text" : "fit xydata synthparams"
 				}
 
@@ -283,7 +295,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 771.5, 83.166666477918625, 174.0, 22.0 ],
+					"patching_rect" : [ 848.0, 304.833333492279053, 174.0, 22.0 ],
 					"text" : "buffer~ paramsbuf @samps 10"
 				}
 
@@ -303,13 +315,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-18",
-					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 146.0, 250.712852784277061, 93.0, 35.0 ],
-					"text" : "0.307087 0.480315"
+					"patching_rect" : [ 146.0, 250.712852784277061, 93.0, 22.0 ],
+					"text" : "1. 0.771654"
 				}
 
 			}
@@ -2422,6 +2433,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-11", 0 ],
 					"source" : [ "obj-24", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 0 ],
+					"source" : [ "obj-25", 0 ]
 				}
 
 			}
