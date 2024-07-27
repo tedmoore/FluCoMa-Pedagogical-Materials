@@ -2,4 +2,4 @@ FluCoMa (https://www.flucoma.org/) is a toolkit for making music with machine li
 
 For more descriptive information about teaching FluCoMa, see [FluCoMa for Pedagogues](https://github.com/flucoma/flucoma-for-pedagogues).
 
-Special thanks to PA Tremblay, Owen Green, James Bradbury, and Gerard Roma for all of their work on FluCoMa including many of these pedagogical materials.
+Special thanks to PA Tremblay, Owen Green, James Bradbury, Gerard Roma, Alex Harker, and Jacob Hart for all of their work on FluCoMa including many of these pedagogical materials.

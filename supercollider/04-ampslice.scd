@@ -2,10 +2,22 @@
 
 ~buf = Buffer.read(s,FluidFilesPath("Nicol-LoopE-M.wav"));
 
+~buf.play;
+
 (
 {
-	var sig = PlayBuf.ar(1,~buf,BufRateScale.kr(~buf),loop:1);
-	var onsets = FluidAmpSlice.ar(sig,fastRampUp:10,fastRampDown:2205,slowRampUp:4410,slowRampDown:4410,onThreshold:10,offThreshold:5,floor:-40,minSliceLength:4410,highPassFreq:20);
+	var sig = PlayBuf.ar(1,~buf,BufRateScale.kr(~buf));
+	var onsets = FluidAmpSlice.ar(sig,
+		fastRampUp:10,
+		fastRampDown:2205,
+		slowRampUp:4410,
+		slowRampDown:4410,
+		onThreshold:10,
+		offThreshold:5,
+		floor:-40,
+		minSliceLength:4410,
+		highPassFreq:20
+	);
 	[sig,onsets];
 }.play;
 )
@@ -24,6 +36,11 @@ fork({
 
 	s.sync;
 
+	slicepoints.loadToFloatArray(action:{
+		arg fa;
+		fa.postln;
+	});
+
 	FluidWaveform(buf,slicepoints);
 },AppClock);
 )
@@ -41,7 +58,8 @@ fork({
     var sig = PlayBuf.ar(~drums.numChannels,~drums,BufRateScale.ir(~drums),loop:1);
     var amp_feature = FluidAmpFeature.ar(sig,100,100,44100,44100,-40);
     amp_feature.poll;
-    sig * amp_feature.dbamp * -30.dbamp;
+    sig = sig * amp_feature.dbamp * -30.dbamp;
+	sig.dup;
 }.play;
 )
 
@@ -51,6 +69,7 @@ fork({
     var sig = PlayBuf.ar(~drums.numChannels,~drums,BufRateScale.ir(~drums),loop:1);
     var amp_feature = FluidAmpFeature.ar(sig,100,100,44100,44100,-40) * -1;
     amp_feature.poll;
-    sig * amp_feature.dbamp
+    sig = sig * amp_feature.dbamp;
+	sig.dup;
 }.play;
 )

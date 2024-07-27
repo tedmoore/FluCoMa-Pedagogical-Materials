@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 6,
-			"revision" : 2,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 100.0, 1188.0, 983.0 ],
+		"rect" : [ 34.0, 87.0, 1863.0, 1319.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -53,13 +53,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-46",
-					"linecount" : 5,
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 659.0, 730.0, 174.0, 76.0 ],
-					"text" : "-55.155041 9.650621 27.284096 13.287583 6.321803 0.155326 1.30213 0.812619 1.394913 1.585754 -0.421781 -0.410031 5.712279"
+					"patching_rect" : [ 659.0, 730.0, 174.0, 35.0 ],
+					"text" : "-0. 0. 0. 0. -0. 0. 0. -0. -0. 0. -0. -0. -0."
 				}
 
 			}
@@ -72,19 +72,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1056.5, 660.0, 199.0, 76.0 ],
-					"text" : "-0.973464 2.11611 -1.221255 3.216152 -1.826947 2.49704 -0.602873 1.534628 0.296569 -0.006842 1.394263 -0.700571 2.347272"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-37",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 90.0, 238.0, 400.0, 22.0 ],
-					"text" : "\"/Users/ted/Documents/Max 8/Packages/FluidCorpusManipulation/media\""
+					"text" : "0.924459 0.443164 0.356977 0.593212 0.801356 0.824813 0.66945 0.286144 0.294241 0.867856 0.583086 0.633912 0.281872"
 				}
 
 			}
@@ -282,9 +270,9 @@
 								"filename" : "Constanzo-PreparedSnare-M.wav",
 								"filekind" : "audiofile",
 								"id" : "u849006945",
-								"loop" : 0,
+								"loop" : 1,
 								"content_state" : 								{
-
+									"loop" : 1
 								}
 
 							}
@@ -293,9 +281,9 @@
 								"filename" : "Green-Box639.wav",
 								"filekind" : "audiofile",
 								"id" : "u005006948",
-								"loop" : 0,
+								"loop" : 1,
 								"content_state" : 								{
-
+									"loop" : 1
 								}
 
 							}
@@ -304,9 +292,9 @@
 								"filename" : "Green-Box641.wav",
 								"filekind" : "audiofile",
 								"id" : "u871006951",
-								"loop" : 0,
+								"loop" : 1,
 								"content_state" : 								{
-
+									"loop" : 1
 								}
 
 							}
@@ -359,9 +347,9 @@
 								"filename" : "Tremblay-CEL-GlitchyMusicBoxMelo.wav",
 								"filekind" : "audiofile",
 								"id" : "u703006966",
-								"loop" : 1,
+								"loop" : 0,
 								"content_state" : 								{
-									"loop" : 1
+									"loop" : 0
 								}
 
 							}
@@ -409,7 +397,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -815,6 +803,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-91",
+					"int" : 1,
 					"maxclass" : "gswitch2",
 					"numinlets" : 2,
 					"numoutlets" : 2,
@@ -1088,7 +1077,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 803.0, 602.0, 91.0, 22.0 ],
-					"text" : "knearest \"300\""
+					"text" : "knearest \"653\""
 				}
 
 			}
@@ -1294,13 +1283,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 279.0, 147.0, 627.0, 658.0 ],
+						"rect" : [ 34.0, 87.0, 2492.0, 1319.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1660,7 +1649,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 6,
-							"revision" : 2,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2629,13 +2618,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-62", 1 ],
 					"source" : [ "obj-36", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-4", 0 ],
-					"source" : [ "obj-37", 0 ]
 				}
 
 			}

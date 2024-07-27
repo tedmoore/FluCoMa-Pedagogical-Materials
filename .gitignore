@@ -11,3 +11,6 @@ max/metal
 max/synth-sounds
 max/tenor-multiphonics
 max/tubes
+.venv-cpu
+.venv-torch
+python/__pycache__

@@ -1,5 +1,7 @@
 ~src = Buffer.read(s,FluidFilesPath("Tremblay-ASWINE-ScratchySynth-M.wav"));
 
+~src.play;
+
 (
 fork{
 	~pitchbuf = Buffer(s);

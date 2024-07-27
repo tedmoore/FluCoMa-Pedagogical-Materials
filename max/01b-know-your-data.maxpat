@@ -45,7 +45,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 456.0, 363.0, 150.0, 20.0 ],
-					"text" : "Y Axis:"
+					"text" : "Another Axis:"
 				}
 
 			}
@@ -56,7 +56,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 254.0, 363.0, 150.0, 20.0 ],
-					"text" : "X Axis:"
+					"text" : "An Axis:"
 				}
 
 			}

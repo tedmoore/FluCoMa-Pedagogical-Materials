@@ -75,7 +75,7 @@ FluidStandardize(s).fitTransform(~ds,~ds_stand);
 	~clusters.do{
 		arg cl, i;
 		"cluster ".post; i.postln;
-		cl.size.postln;
+		"has % points".format(cl.size).postln;
 		cl.postln;
 		"".postln;
 	};
@@ -144,11 +144,11 @@ fork{
 // 9. play a cluster sorted by distance
 (
 fork{
-	~clusters_by_dist[6].do{
+	~clusters_by_dist[3].do{
 		arg ev;
 		"%:\t%".format(ev.id,ev.distance).postln;
 		~play_id.(ev.id);
-		0.02.wait;
+		0.2.wait;
 	};
 }
 )

@@ -3,7 +3,6 @@
 (
 ~slicepoints = Buffer(s);
 FluidBufAmpSlice.processBlocking(s,~buf,indices:~slicepoints,fastRampUp:10,fastRampDown:2205,slowRampUp:4410,slowRampDown:4410,onThreshold:10,offThreshold:5,floor:-40,minSliceLength:4410,highPassFreq:20,action:{"done".postln;});
-FluidBufOnsetSlice.processBlocking
 )
 
 FluidWaveform(~buf,~slicepoints,bounds:Rect(0,0,1600,400));
@@ -54,6 +53,7 @@ FluidWaveform(~buf,~slicepoints,bounds:Rect(0,0,1600,400));
 				arg nearest;
 				if(nearest != prev){
 					nearest.postln;
+					view.highlight_(nearest);
 
 					{
 						var startPos = Index.kr(~slicepoints,nearest.asInteger);

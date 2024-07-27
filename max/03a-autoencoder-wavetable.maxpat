@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 87.0, 1612.0, 929.0 ],
+		"rect" : [ 34.0, 87.0, 1796.0, 1319.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -58,7 +58,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 344.0, 810.0, 154.0, 22.0 ],
-					"text" : "0.313167 0.384342"
+					"text" : "0.921708 0.508897"
 				}
 
 			}
@@ -892,7 +892,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 133.0, 186.0, 1364.0, 929.0 ],
+						"rect" : [ 34.0, 87.0, 2492.0, 1319.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -939,7 +939,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 614.0, 563.0, 388.0, 20.0 ],
-									"presentation_linecount" : 2,
 									"text" : "output of autoencoder (hopefully the same as or similar to pca vector)"
 								}
 
@@ -1381,7 +1380,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 30.0, 70.0, 50.0, 22.0 ]
+									"patching_rect" : [ 29.710145175457001, 68.84058028459549, 50.0, 22.0 ]
 								}
 
 							}
@@ -2172,7 +2171,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 426.0, 203.0, 640.0, 480.0 ],
+						"rect" : [ 34.0, 87.0, 2492.0, 1319.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2488,7 +2487,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 405.0, 484.0, 130.0, 22.0 ],
-					"text" : "3.285986"
+					"text" : "3.682805"
 				}
 
 			}
@@ -2943,7 +2942,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 93.0, 165.0, 1088.0, 731.0 ],
+						"rect" : [ 34.0, 87.0, 2492.0, 1319.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3182,7 +3181,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 10,
 									"outlettype" : [ "float", "list", "float", "float", "float", "float", "float", "", "int", "" ],
-									"patching_rect" : [ 51.5, 100.0, 103.0, 22.0 ],
+									"patching_rect" : [ 51.5, 100.0, 182.500000000000028, 22.0 ],
 									"text" : "info~ tbonegated"
 								}
 

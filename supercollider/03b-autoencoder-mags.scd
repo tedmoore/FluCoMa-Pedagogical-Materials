@@ -83,7 +83,7 @@ fork{
 (
 // ~nn_shape = [200,100,50,2].mirror;
 ~nn_shape = [15,10,5,2].mirror;
-~ae = FluidMLPRegressor(s,~nn_shape,FluidMLPRegressor.relu,FluidMLPRegressor.sigmoid,learnRate:0.1,maxIter:1,validation:0);
+~ae = FluidMLPRegressor(s,~nn_shape,FluidMLPRegressor.relu,FluidMLPRegressor.sigmoid,learnRate:0.1,maxIter:1,validation:0.2);
 // ~ae.tapOut_(-1);
 ~continuous = true;
 ~train = {
@@ -97,9 +97,10 @@ fork{
 )
 
 // tweak the learning rate
-~ae.learnRate_(0.001);
+~ae.learnRate_(0.01);
 ~ae.batchSize_(5);
 ~ae.maxIter_(50);
+~ae.validation_(0.2);
 
 // turn off continuous training
 ~continuous = false;

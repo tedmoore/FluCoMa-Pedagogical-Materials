@@ -20,6 +20,7 @@ b.play;
 /*
 
 CPU (FluCoMa):
+components = 2
 
 Buffer of 1 seconds took 4.91059275 seconds to analyze (decompose)
 Buffer of 10 seconds took 4.91059275 seconds to analyze (decompose)

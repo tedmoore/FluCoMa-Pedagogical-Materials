@@ -65,7 +65,7 @@ fork{
 // use PCA to reduce the number of dimensions from 2048 to something smaller
 (
 ~ds_pca = FluidDataSet(s);
-~pca = FluidPCA(s,150);
+~pca = FluidPCA(s,130);
 ~pca.fitTransform(~ds,~ds_pca,{
 	arg variance;
 	variance.postln;
@@ -77,8 +77,8 @@ fork{
 
 // train the autoencoder
 (
-~nn_shape = [100,80,50,20,2].mirror;
-~ae = FluidMLPRegressor(s,~nn_shape,FluidMLPRegressor.relu,FluidMLPRegressor.identity,learnRate:0.1,maxIter:10,validation:0);
+~nn_shape = [80,40,2].mirror;
+~ae = FluidMLPRegressor(s,~nn_shape,FluidMLPRegressor.relu,FluidMLPRegressor.identity,learnRate:0.1,maxIter:10,validation:0.2);
 ~ae.tapOut_(-1);
 ~continuous = true;
 ~train = {
@@ -92,8 +92,9 @@ fork{
 )
 
 // tweak the learning rate
-~ae.learnRate_(0.001);
-~ae.batchSize_(30);
+~ae.learnRate_(0.005);
+~ae.batchSize_(25);
+~ae.validation_(0.2);
 
 // turn off continuous training
 ~continuous = false;

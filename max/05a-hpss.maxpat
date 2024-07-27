@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 3,
+			"minor" : 6,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 87.0, 1318.0, 929.0 ],
+		"rect" : [ 34.0, 87.0, 2492.0, 1319.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -108,8 +108,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 3,
+							"minor" : 6,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -385,14 +385,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 3,
+							"minor" : 6,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 87.0, 1612.0, 929.0 ],
+						"rect" : [ 34.0, 87.0, 2492.0, 1319.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -420,7 +420,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-9",
@@ -428,7 +427,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 276.000008225440979, 163.33333820104599, 71.333330988883972, 60.0 ],
+									"patching_rect" : [ 405.0, 155.0, 71.333330988883972, 60.0 ],
 									"text" : "off\nharmonic\npercussive\nresidual"
 								}
 
@@ -443,9 +442,9 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 250.000007450580597, 160.000004768371582, 18.0, 66.0 ],
+									"patching_rect" : [ 379.0, 152.0, 18.0, 66.0 ],
 									"size" : 4,
-									"value" : 3
+									"value" : 2
 								}
 
 							}
@@ -456,7 +455,7 @@
 									"numinlets" : 4,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 39.666665732860565, 402.666678667068481, 194.666670501232147, 22.0 ],
+									"patching_rect" : [ 40.0, 418.0, 414.0, 22.0 ],
 									"text" : "selector~ 3"
 								}
 
@@ -468,8 +467,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "signal", "signal", "signal", "" ],
-									"patching_rect" : [ 39.666665732860565, 324.000009655952454, 194.666670501232147, 22.0 ],
-									"text" : "fluid.hpss~"
+									"patching_rect" : [ 171.0, 382.0, 414.0, 22.0 ],
+									"text" : "fluid.hpss~ @maxharmfiltersize 51 @maxpercfiltersize 51 @maxfftsize 8192"
 								}
 
 							}
@@ -483,12 +482,13 @@
 									"orientation" : 1,
 									"outlettype" : [ "signal", "signal", "", "float", "list" ],
 									"parameter_enable" : 1,
-									"patching_rect" : [ 39.666665732860565, 448.113488614559174, 136.0, 47.0 ],
+									"patching_rect" : [ 40.0, 463.0, 136.0, 47.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_longname" : "live.gain~[2]",
 											"parameter_mmax" : 6.0,
 											"parameter_mmin" : -70.0,
+											"parameter_modmode" : 0,
 											"parameter_shortname" : "live.gain~",
 											"parameter_type" : 0,
 											"parameter_unitstyle" : 4
@@ -507,7 +507,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 39.666665732860565, 512.780157208442688, 45.0, 45.0 ]
+									"patching_rect" : [ 40.0, 528.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -557,7 +557,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 350.000008225440979, 239.333341704139684, 247.333336234092712, 22.0 ]
+									"patching_rect" : [ 381.0, 245.0, 247.333336234092712, 22.0 ]
 								}
 
 							}
@@ -570,20 +570,33 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 350.000008225440979, 272.000009999999975, 247.333336234092712, 22.0 ]
+									"patching_rect" : [ 381.0, 278.0, 247.333336234092712, 22.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"attr" : "maxharmfiltersize",
+									"attr" : "percfiltersize",
 									"id" : "obj-8",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 350.000008225440979, 304.000009999999975, 247.333336234092712, 22.0 ]
+									"patching_rect" : [ 381.0, 309.0, 247.333336234092712, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "fftsettings",
+									"id" : "obj-11",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 381.0, 342.0, 247.333336234092712, 22.0 ]
 								}
 
 							}
@@ -619,6 +632,13 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -640,7 +660,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
-									"midpoints" : [ 259.500007450580597, 387.0, 49.166665732860565, 387.0 ],
+									"midpoints" : [ 388.5, 229.0, 49.5, 229.0 ],
 									"source" : [ "obj-5", 0 ]
 								}
 
@@ -756,6 +776,7 @@
 							"parameter_longname" : "live.gain~[1]",
 							"parameter_mmax" : 6.0,
 							"parameter_mmin" : -70.0,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.gain~",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4
@@ -932,6 +953,7 @@
 							"parameter_longname" : "live.gain~",
 							"parameter_mmax" : 6.0,
 							"parameter_mmin" : -70.0,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.gain~",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4
@@ -1074,21 +1096,21 @@
 		"dependency_cache" : [ 			{
 				"name" : "Nicol-LoopE-M.wav",
 				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/media",
-				"patcherrelativepath" : "../../../../Max 8/Packages/FluidCorpusManipulation/media",
+				"patcherrelativepath" : "../../../../../Max 8/Packages/FluidCorpusManipulation/media",
 				"type" : "WAVE",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Tremblay-AaS-SynthTwoVoices-M.wav",
 				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/media",
-				"patcherrelativepath" : "../../../../Max 8/Packages/FluidCorpusManipulation/media",
+				"patcherrelativepath" : "../../../../../Max 8/Packages/FluidCorpusManipulation/media",
 				"type" : "WAVE",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "fav-max.js",
 				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/jsui",
-				"patcherrelativepath" : "../../../../Max 8/Packages/FluidCorpusManipulation/jsui",
+				"patcherrelativepath" : "../../../../../Max 8/Packages/FluidCorpusManipulation/jsui",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
@@ -1131,7 +1153,7 @@
 , 			{
 				"name" : "fluid.waveform~.js",
 				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/jsui",
-				"patcherrelativepath" : "../../../../Max 8/Packages/FluidCorpusManipulation/jsui",
+				"patcherrelativepath" : "../../../../../Max 8/Packages/FluidCorpusManipulation/jsui",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
