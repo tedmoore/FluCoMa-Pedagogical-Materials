@@ -2,42 +2,16 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 6,
-			"revision" : 0,
+			"major" : 9,
+			"minor" : 0,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 100.0, 832.0, 983.0 ],
-		"bglocked" : 0,
-		"openinpresentation" : 0,
-		"default_fontsize" : 12.0,
-		"default_fontface" : 0,
-		"default_fontname" : "Arial",
-		"gridonopen" : 1,
+		"rect" : [ 34.0, 100.0, 869.0, 983.0 ],
 		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
-		"objectsnaponopen" : 1,
-		"statusbarvisible" : 2,
-		"toolbarvisible" : 1,
-		"lefttoolbarpinned" : 0,
-		"toptoolbarpinned" : 0,
-		"righttoolbarpinned" : 0,
-		"bottomtoolbarpinned" : 0,
-		"toolbars_unpinned_last_save" : 0,
-		"tallnewobj" : 0,
-		"boxanimatetime" : 200,
-		"enablehscroll" : 1,
-		"enablevscroll" : 1,
-		"devicewidth" : 0.0,
-		"description" : "",
-		"digest" : "",
-		"tags" : "",
-		"style" : "",
-		"subpatcher_template" : "",
-		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontface" : 1,
@@ -47,7 +21,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 655.200009763240814, 246.400003671646118, 199.20000296831131, 60.0 ],
+					"patching_rect" : [ 670.0, 246.0, 199.20000296831131, 60.0 ],
 					"text" : "Scaling /\nTransformation"
 				}
 
@@ -106,11 +80,11 @@
 				"box" : 				{
 					"id" : "obj-34",
 					"maxclass" : "newobj",
-					"numinlets" : 2,
+					"numinlets" : 6,
 					"numoutlets" : 1,
-					"outlettype" : [ "float" ],
-					"patching_rect" : [ 555.200008273124695, 252.80000376701355, 39.0, 22.0 ],
-					"text" : "/ 127."
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 555.200008273124695, 252.80000376701355, 110.0, 22.0 ],
+					"text" : "scale 0 127 0.1 0.9"
 				}
 
 			}
@@ -146,8 +120,8 @@
 					"numinlets" : 6,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 352.800005257129669, 253.600003778934479, 101.0, 22.0 ],
-					"text" : "scale -80. 0. 0. 1."
+					"patching_rect" : [ 352.800005257129669, 253.600003778934479, 114.0, 22.0 ],
+					"text" : "scale -80. 0. 0.1 0.7"
 				}
 
 			}
@@ -242,6 +216,37 @@
 					"patching_rect" : [ 30.4000004529953, 12.000000178813934, 150.0, 90.0 ],
 					"pitchcorrection" : 0,
 					"quality" : "basic",
+					"saved_attribute_attributes" : 					{
+						"candicane2" : 						{
+							"expression" : ""
+						}
+,
+						"candicane3" : 						{
+							"expression" : ""
+						}
+,
+						"candicane4" : 						{
+							"expression" : ""
+						}
+,
+						"candicane5" : 						{
+							"expression" : ""
+						}
+,
+						"candicane6" : 						{
+							"expression" : ""
+						}
+,
+						"candicane7" : 						{
+							"expression" : ""
+						}
+,
+						"candicane8" : 						{
+							"expression" : ""
+						}
+
+					}
+,
 					"timestretch" : [ 0 ]
 				}
 
@@ -262,6 +267,7 @@
 							"parameter_longname" : "live.gain~",
 							"parameter_mmax" : 6.0,
 							"parameter_mmin" : -70.0,
+							"parameter_modmode" : 0,
 							"parameter_shortname" : "live.gain~",
 							"parameter_type" : 0,
 							"parameter_unitstyle" : 4
@@ -324,7 +330,7 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "jit_gl_texture" ],
-					"patching_rect" : [ 269.600004017353058, 496.000007390975952, 128.0, 130.0 ],
+					"patching_rect" : [ 269.600004017353058, 494.0, 128.0, 130.0 ],
 					"prototypename" : "pixl",
 					"varname" : "pixl8r",
 					"viewvisibility" : 1
@@ -401,7 +407,38 @@
 					"outlettype" : [ "jit_gl_texture", "", "dictionary" ],
 					"output_texture" : 1,
 					"parameter_enable" : 0,
-					"patching_rect" : [ 68.000001013278961, 428.80000638961792, 191.0, 50.0 ]
+					"patching_rect" : [ 68.000001013278961, 428.80000638961792, 191.0, 50.0 ],
+					"saved_attribute_attributes" : 					{
+						"candicane2" : 						{
+							"expression" : ""
+						}
+,
+						"candicane3" : 						{
+							"expression" : ""
+						}
+,
+						"candicane4" : 						{
+							"expression" : ""
+						}
+,
+						"candicane5" : 						{
+							"expression" : ""
+						}
+,
+						"candicane6" : 						{
+							"expression" : ""
+						}
+,
+						"candicane7" : 						{
+							"expression" : ""
+						}
+,
+						"candicane8" : 						{
+							"expression" : ""
+						}
+
+					}
+
 				}
 
 			}
@@ -608,6 +645,7 @@
 
 			}
  ],
+		"originid" : "pat-4",
 		"parameters" : 		{
 			"obj-16" : [ "live.gain~", "live.gain~", 0 ],
 			"obj-19::obj-12" : [ "Fullscreen", "Fullscreen", 0 ],
@@ -649,22 +687,22 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "Constanzo-PreparedSnare-M.wav",
-				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/media",
-				"patcherrelativepath" : "../../../../../Max 8/Packages/FluidCorpusManipulation/media",
+				"bootpath" : "~/Documents/Max 9/Packages/FluidCorpusManipulation/media",
+				"patcherrelativepath" : "../../../../../../Max 9/Packages/FluidCorpusManipulation/media",
 				"type" : "WAVE",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Nicol-LoopE-M.wav",
-				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/media",
-				"patcherrelativepath" : "../../../../../Max 8/Packages/FluidCorpusManipulation/media",
+				"bootpath" : "~/Documents/Max 9/Packages/FluidCorpusManipulation/media",
+				"patcherrelativepath" : "../../../../../../Max 9/Packages/FluidCorpusManipulation/media",
 				"type" : "WAVE",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "Tremblay-CEL-GlitchyMusicBoxMelo.wav",
-				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/media",
-				"patcherrelativepath" : "../../../../../Max 8/Packages/FluidCorpusManipulation/media",
+				"bootpath" : "~/Documents/Max 9/Packages/FluidCorpusManipulation/media",
+				"patcherrelativepath" : "../../../../../../Max 9/Packages/FluidCorpusManipulation/media",
 				"type" : "WAVE",
 				"implicit" : 1
 			}

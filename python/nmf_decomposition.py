@@ -44,7 +44,7 @@ def plot_nmf(stft, activations, bases, sr):
 def decompose(mags, n_components):
 
     nmf_args = {'solver':'mu','beta_loss':'kullback-leibler'}
-    nmf_model = NMF(n_components=n_components,**nmf_args,)
+    nmf_model = NMF(n_components=n_components,**nmf_args)
 
     acts = nmf_model.fit_transform(np.transpose(mags)) 
     bases = nmf_model.components_

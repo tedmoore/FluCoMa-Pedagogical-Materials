@@ -14,3 +14,6 @@ max/tubes
 .venv-cpu
 .venv-torch
 python/__pycache__
+component-0.wav
+component-1.wav
+nand-synth-decomposition.json

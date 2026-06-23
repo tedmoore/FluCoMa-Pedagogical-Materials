@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 87.0, 1742.0, 1319.0 ],
+		"rect" : [ 34.0, 100.0, 1269.0, 983.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,33 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"lastchannelcount" : 0,
+					"maxclass" : "live.gain~",
+					"numinlets" : 2,
+					"numoutlets" : 5,
+					"outlettype" : [ "signal", "signal", "", "float", "list" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 21.0, 387.272489845752716, 48.0, 136.0 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_longname" : "live.gain~",
+							"parameter_mmax" : 6.0,
+							"parameter_mmin" : -70.0,
+							"parameter_modmode" : 3,
+							"parameter_shortname" : "live.gain~",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 4
+						}
+
+					}
+,
+					"varname" : "live.gain~"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-12",
 					"maxclass" : "comment",
@@ -179,7 +206,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 534.472263872623444, 561.48725563287735, 137.499998688697815, 22.0 ],
-					"text" : "predictpoint trombone"
+					"text" : "predictpoint oboe"
 				}
 
 			}
@@ -190,7 +217,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 679.865801393985748, 449.406713843345642, 134.0, 22.0 ],
+					"patching_rect" : [ 800.000011920928955, 422.561075091362, 134.0, 22.0 ],
 					"text" : "fit analyses instruments"
 				}
 
@@ -418,7 +445,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 14.0, 327.5, 45.0, 45.0 ]
+					"patching_rect" : [ 21.0, 561.48725563287735, 45.0, 45.0 ]
 				}
 
 			}
@@ -432,7 +459,7 @@
 								"filename" : "Harker-DS-TenOboeMultiphonics-M.wav",
 								"filekind" : "audiofile",
 								"id" : "u804002094",
-								"selection" : [ 0.62178517397882, 1.0 ],
+								"selection" : [ 0.618759455370651, 1.0 ],
 								"loop" : 0,
 								"content_state" : 								{
 									"loop" : 0
@@ -629,17 +656,16 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-1", 1 ],
-					"midpoints" : [ 30.5, 312.0, 49.5, 312.0 ],
-					"order" : 2,
+					"destination" : [ "obj-6", 1 ],
+					"order" : 1,
 					"source" : [ "obj-5", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"midpoints" : [ 30.5, 312.0, 23.5, 312.0 ],
+					"destination" : [ "obj-6", 0 ],
+					"midpoints" : [ 30.5, 312.0, 30.5, 312.0 ],
 					"order" : 3,
 					"source" : [ "obj-5", 0 ]
 				}
@@ -656,7 +682,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
-					"order" : 1,
+					"order" : 2,
 					"source" : [ "obj-5", 0 ]
 				}
 
@@ -686,6 +712,20 @@
 				"patchline" : 				{
 					"destination" : [ "obj-2", 1 ],
 					"source" : [ "obj-59", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 1 ],
+					"source" : [ "obj-6", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-6", 0 ]
 				}
 
 			}
@@ -741,6 +781,20 @@
 
 			}
  ],
+		"parameters" : 		{
+			"obj-6" : [ "live.gain~", "live.gain~", 0 ],
+			"parameterbanks" : 			{
+				"0" : 				{
+					"index" : 0,
+					"name" : "",
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
 		"dependency_cache" : [ 			{
 				"name" : "Harker-DS-TenOboeMultiphonics-M.wav",
 				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/media",
